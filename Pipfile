@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+transformers = "*"
+peft = "*"
+trl = "*"
+datasets = "*"
+pip = "*"
+install = "*"
+bitsandbytes = {file = "https://github.com/jllllll/bitsandbytes-windows-webui/raw/main/bitsandbytes-0.39.0-py3-none-any.whl"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
