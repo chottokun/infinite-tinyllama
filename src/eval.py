@@ -106,7 +106,11 @@ def generate_response_with_context(question, context):
     return res
 
 def extract_response(output):
-    return re.search(r'<\|im_start\|>assistant\n(.+)<\|im_end\|>', output, re.DOTALL).group(1)
+    match = re.search(r'<\|im_start\|>assistant\n(.+)<\|im_end\|>', output, re.DOTALL)
+    if match:
+        return match.group(1)
+    else:
+        return f"can not extract response:{output}"
 
 if "evaluation_prompts_with_context" in train_config:
     for prompt in train_config['evaluation_prompts_with_context']:
