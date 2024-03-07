@@ -1,0 +1,22 @@
+base_model_id: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+model_name: tinyllama-wikipedia-qa-ja
+output_base_dir: output
+dataset_id: alfredplpl/wikipedia-qa-ja-500k
+dataset_input_field_name: question
+dataset_output_field_name: answer
+dataset_train_split_seed: 42
+dataset_train_split_test_size: 0.4
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+train_per_device_train_batch_size: 2
+train_gradient_accumulation_steps: 1
+train_num_train_epochs: 2
+train_max_steps: 100
+train_fp16: True
+inference_max_new_tokens: 64
+evaluation_prompts:
+  - "まず第一に、私はNASAが何を意味しているのか知りたいです。"
+  - "富士山は何県にありますか？"
+  - "FBIとCIAの違いは何ですか？"
+

@@ -10,7 +10,7 @@ import re
 
 # 指定されたファイルパスからyamlファイルを読み込む
 def load_yaml(file_path):
-    with open(file_path, "r") as file:
+    with open(file_path, "rb") as file:
         data = yaml.safe_load(file)
     return data
 
